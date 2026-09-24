@@ -1,0 +1,54 @@
+name: Sprawdź plan AGH
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # co 15 minut (GitHub bywa opóźniony o kilka minut)
+  workflow_dispatch:          # przycisk "Run workflow" do ręcznego uruchomienia
+
+permissions:
+  contents: write             # potrzebne, żeby zapisać state.json w repo
+
+concurrency:
+  group: plan-watch
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      HAS_CSV_URL: ${{ secrets.PLAN_CSV_URL != '' }}
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sprawdź zmiany
+        env:
+          PLAN_URL: ${{ secrets.PLAN_URL }}
+          PLAN_FILTER: ${{ vars.PLAN_FILTER }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python watcher.py --once
+
+      - name: Sprawdź wolne miejsca
+        if: env.HAS_CSV_URL == 'true'
+        env:
+          PLAN_CSV_URL: ${{ secrets.PLAN_CSV_URL }}
+          PLAN_FILTER: ${{ vars.PLAN_FILTER }}
+          PLAN_LIMITS: ${{ vars.PLAN_LIMITS }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python seats.py --once
+
+      - name: Zapisz stan
+        run: |
+          git config user.name "plan-watch-bot"
+          git config user.email "plan-watch-bot@users.noreply.github.com"
+          for f in state.json seats_state.json; do [ -f "$f" ] && git add "$f"; done
+          git diff --cached --quiet || git commit -m "Aktualizacja stanu planu"
+          git push
