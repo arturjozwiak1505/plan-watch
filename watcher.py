@@ -291,8 +291,11 @@ def post_json(url, payload):
     urllib.request.urlopen(req, timeout=30).read()
 
 
-def notify(text):
+def notify(text, ping=False):
+    """ping=True -> na Discordzie dodaje @everyone (mocne powiadomienie na telefonie).
+    Można wyłączyć zmienną DISCORD_PING=0."""
     print(text, flush=True)
+    ping = ping and os.environ.get("DISCORD_PING", "1") != "0"
     token, chat = os.environ.get("TELEGRAM_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
     webhook = os.environ.get("DISCORD_WEBHOOK")
     if token and chat:
@@ -303,9 +306,12 @@ def notify(text):
             except Exception as e:
                 print(f"[!] Telegram: {e}", file=sys.stderr)
     if webhook:
-        for chunk in split_message(text, 1900):
+        for i, chunk in enumerate(split_message(text, 1900)):
+            payload = {"content": chunk, "allowed_mentions": {"parse": []}}
+            if ping and i == 0:
+                payload = {"content": "@everyone\n" + chunk, "allowed_mentions": {"parse": ["everyone"]}}
             try:
-                post_json(webhook, {"content": chunk})
+                post_json(webhook, payload)
             except Exception as e:
                 print(f"[!] Discord: {e}", file=sys.stderr)
 
