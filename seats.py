@@ -24,10 +24,14 @@ import argparse
 import csv
 import io
 import os
+import random
 import re
 import sys
 import time
+import urllib.error
 from datetime import datetime
+
+MIN_SECONDS = 10
 
 from watcher import MIN_INTERVAL_MIN, fetch, fix_console, load_state, notify, save_state
 
@@ -129,6 +133,9 @@ def merge_lines(events):
     return out
 
 
+QUIET = False  # w trybie szybkim nie zaśmiecamy konsoli linijkami "bez zmian"
+
+
 def check(url, state_path, csv_file, only, manual_limits):
     text = open(csv_file, encoding="utf-8-sig").read() if csv_file else fetch(url)
     if "BEGIN:VCALENDAR" in text[:200]:
@@ -151,20 +158,29 @@ def check(url, state_path, csv_file, only, manual_limits):
         if not has_limit:
             msg += ("\nℹ️ W CSV nie ma kolumny Limit – powiadomię, gdy spadnie liczba zapisanych."
                     "\nLimit możesz podać ręcznie opcją --limit.")
+        if QUIET:
+            print()
         notify(msg)
         return
 
     events = diff(saved.get("groups", {}), groups)
     if not events:
-        print(f"[{datetime.now():%Y-%m-%d %H:%M}] bez zmian w zapisach ({len(groups)} grup)", flush=True)
+        line = f"[{datetime.now():%H:%M:%S}] bez zmian w zapisach ({len(groups)} grup)"
+        if QUIET:
+            print(line, end="\r", flush=True)
+        else:
+            print(line, flush=True)
         return
 
+    if QUIET:
+        print()  # nie nadpisuj linijki statusu
     lines = ["🎓 Zmiany w zapisach"]
     for title, msgs in merge_lines(events).items():
         lines.append("")
         lines.append(f"▶ {title}")
         lines.extend("  " + m for m in msgs)
-    notify("\n".join(lines))
+    # @everyone tylko gdy jest wolne miejsce – "znów komplet" przychodzi po cichu
+    notify("\n".join(lines), ping=any(prio <= 1 and "🟢" in line for prio, _, _, line in events))
 
 
 def main():
@@ -173,7 +189,10 @@ def main():
     p.add_argument("--url", default=os.environ.get("PLAN_CSV_URL") or None, help="link do eksportu CSV listy zajęć")
     p.add_argument("--state", default="seats_state.json")
     p.add_argument("--once", action="store_true")
-    p.add_argument("--interval", type=float, default=5, help="minuty między sprawdzeniami (min. 5)")
+    p.add_argument("--interval", type=float, default=5, help="minuty między sprawdzeniami (min. 2)")
+    p.add_argument("--seconds", type=float,
+                   help=f"tryb szybki: sekundy między sprawdzeniami (min. {MIN_SECONDS})")
+    p.add_argument("--hours", help="sprawdzaj tylko w tych godzinach, np. 7-23")
     p.add_argument("--only", default=os.environ.get("PLAN_FILTER"),
                    help="tylko pasujące przedmioty/grupy, np. 'Jakości,Machine learning'")
     p.add_argument("--limit", action="append", default=[l for l in os.environ.get("PLAN_LIMITS", "").split(";") if l],
@@ -195,18 +214,43 @@ def main():
             sys.exit(1)
         return
 
-    failures = 0
+    global QUIET
+    if args.seconds:
+        base = max(args.seconds, MIN_SECONDS)
+        QUIET = True
+        print(f"Tryb szybki: sprawdzam co ~{base:g} s. Zatrzymanie: Ctrl+C.", flush=True)
+    else:
+        base = max(args.interval, MIN_INTERVAL_MIN) * 60
+
+    hours = None
+    if args.hours:
+        a, b = (int(x) for x in args.hours.split("-"))
+        hours = (a, b)
+
+    failures, warned = 0, False
     while True:
+        if hours and not (hours[0] <= datetime.now().hour <= hours[1]):
+            time.sleep(60)
+            continue
+        wait = base
         try:
             run()
-            failures = 0
+            failures, warned = 0, False
+        except urllib.error.HTTPError as e:
+            failures += 1
+            retry = e.headers.get("Retry-After") if e.headers else None
+            # 429 / 503 = serwer prosi o zwolnienie – słuchamy go
+            wait = float(retry) if retry and retry.isdigit() else min(base * 2 ** failures, 600)
+            print(f"\n[!] HTTP {e.code} – zwalniam, następna próba za {wait:.0f} s", file=sys.stderr, flush=True)
         except Exception as e:
             failures += 1
-            print(f"[!] Błąd ({failures}): {e}", file=sys.stderr)
-            if failures == 6:
-                notify(f"⚠️ Od dłuższego czasu nie mogę pobrać zapisów: {e}")
-        time.sleep(max(args.interval, MIN_INTERVAL_MIN) * 60)
-
+            wait = min(base * 2 ** failures, 600)
+            print(f"\n[!] Błąd ({failures}): {e} – następna próba za {wait:.0f} s", file=sys.stderr, flush=True)
+        if failures >= 6 and not warned:
+            notify("⚠️ Od dłuższego czasu nie mogę pobrać zapisów – sprawdź, czy link działa i czy serwer nie blokuje.")
+            warned = True
+        # losowy rozrzut ±20%, żeby zapytania nie szły w idealnie równym rytmie
+        time.sleep(wait * random.uniform(0.8, 1.2))
 
 if __name__ == "__main__":
     main()
