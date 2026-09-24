@@ -2,7 +2,7 @@ name: Sprawdź plan AGH
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # co 15 minut (GitHub bywa opóźniony o kilka minut)
+    - cron: "*/5 * * * *"   # co 15 minut (GitHub bywa opóźniony o kilka minut)
   workflow_dispatch:          # przycisk "Run workflow" do ręcznego uruchomienia
 
 permissions:
