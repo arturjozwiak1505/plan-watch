@@ -1,0 +1,319 @@
+{
+ "groups": {
+  "AI Security | CWL 1": {
+   "enrolled": 12,
+   "group": "1",
+   "kind": "CWL",
+   "limit": 12,
+   "title": "AI Security"
+  },
+  "AI Security | CWL 2": {
+   "enrolled": 12,
+   "group": "2",
+   "kind": "CWL",
+   "limit": 12,
+   "title": "AI Security"
+  },
+  "AI Security | Wykład 1": {
+   "enrolled": 24,
+   "group": "1",
+   "kind": "Wykład",
+   "limit": 24,
+   "title": "AI Security"
+  },
+  "AI Security | Ćwiczenia projektowe 1": {
+   "enrolled": 24,
+   "group": "1",
+   "kind": "Ćwiczenia projektowe",
+   "limit": 24,
+   "title": "AI Security"
+  },
+  "AI Security | Ćwiczenia projektowe 1a": {
+   "enrolled": 24,
+   "group": "1a",
+   "kind": "Ćwiczenia projektowe",
+   "limit": 24,
+   "title": "AI Security"
+  },
+  "Data science na przykładzie zagadnień w firmie Ericsson | CWL 1": {
+   "enrolled": 15,
+   "group": "1",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Data science na przykładzie zagadnień w firmie Ericsson"
+  },
+  "Eksploracja danych (2rok) | CWL 1": {
+   "enrolled": 13,
+   "group": "1",
+   "kind": "CWL",
+   "limit": 13,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | CWL 2": {
+   "enrolled": 12,
+   "group": "2",
+   "kind": "CWL",
+   "limit": 13,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | CWL 3": {
+   "enrolled": 12,
+   "group": "3",
+   "kind": "CWL",
+   "limit": 12,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | CWL 4": {
+   "enrolled": 12,
+   "group": "4",
+   "kind": "CWL",
+   "limit": 12,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | Wykład 1": {
+   "enrolled": 49,
+   "group": "1",
+   "kind": "Wykład",
+   "limit": 49,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | Zajęcia seminaryjne 1": {
+   "enrolled": 17,
+   "group": "1",
+   "kind": "Zajęcia seminaryjne",
+   "limit": 17,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | Zajęcia seminaryjne 2": {
+   "enrolled": 16,
+   "group": "2",
+   "kind": "Zajęcia seminaryjne",
+   "limit": 17,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | Zajęcia seminaryjne 3": {
+   "enrolled": 16,
+   "group": "3",
+   "kind": "Zajęcia seminaryjne",
+   "limit": 16,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | Ćwiczenia projektowe 1": {
+   "enrolled": 17,
+   "group": "1",
+   "kind": "Ćwiczenia projektowe",
+   "limit": 17,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | Ćwiczenia projektowe 1a": {
+   "enrolled": 17,
+   "group": "1a",
+   "kind": "Ćwiczenia projektowe",
+   "limit": 17,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | Ćwiczenia projektowe 2": {
+   "enrolled": 17,
+   "group": "2",
+   "kind": "Ćwiczenia projektowe",
+   "limit": 17,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | Ćwiczenia projektowe 2a": {
+   "enrolled": 17,
+   "group": "2a",
+   "kind": "Ćwiczenia projektowe",
+   "limit": 17,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | Ćwiczenia projektowe 3": {
+   "enrolled": 15,
+   "group": "3",
+   "kind": "Ćwiczenia projektowe",
+   "limit": 16,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "Eksploracja danych (2rok) | Ćwiczenia projektowe 3a": {
+   "enrolled": 15,
+   "group": "3a",
+   "kind": "Ćwiczenia projektowe",
+   "limit": 16,
+   "title": "Eksploracja danych (2rok)"
+  },
+  "FiIS_IIst_Specjalistyczny język angielski B2+ | Lektorat PIS-SF4_832": {
+   "enrolled": 13,
+   "group": "PIS-SF4_832",
+   "kind": "Lektorat",
+   "limit": 19,
+   "title": "FiIS_IIst_Specjalistyczny język angielski B2+"
+  },
+  "FiIS_IIst_Specjalistyczny język angielski B2+ | Lektorat PIS-SF5_833": {
+   "enrolled": 17,
+   "group": "PIS-SF5_833",
+   "kind": "Lektorat",
+   "limit": 19,
+   "title": "FiIS_IIst_Specjalistyczny język angielski B2+"
+  },
+  "FiIS_IIst_Specjalistyczny język angielski B2+ | Lektorat PIS-SF6_834": {
+   "enrolled": 19,
+   "group": "PIS-SF6_834",
+   "kind": "Lektorat",
+   "limit": 19,
+   "title": "FiIS_IIst_Specjalistyczny język angielski B2+"
+  },
+  "Machine learning - advanced | CWL 1": {
+   "enrolled": 15,
+   "group": "1",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 1a": {
+   "enrolled": 15,
+   "group": "1a",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 1b": {
+   "enrolled": 15,
+   "group": "1b",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 1c": {
+   "enrolled": 15,
+   "group": "1c",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 1d": {
+   "enrolled": 15,
+   "group": "1d",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 1e": {
+   "enrolled": 15,
+   "group": "1e",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 1f": {
+   "enrolled": 15,
+   "group": "1f",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 2": {
+   "enrolled": 15,
+   "group": "2",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 2a": {
+   "enrolled": 15,
+   "group": "2a",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 2b": {
+   "enrolled": 15,
+   "group": "2b",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 2c": {
+   "enrolled": 15,
+   "group": "2c",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 2d": {
+   "enrolled": 15,
+   "group": "2d",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 2e": {
+   "enrolled": 15,
+   "group": "2e",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | CWL 2f": {
+   "enrolled": 15,
+   "group": "2f",
+   "kind": "CWL",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | Wykład 1": {
+   "enrolled": 30,
+   "group": "1",
+   "kind": "Wykład",
+   "limit": 30,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | Wykład 1a": {
+   "enrolled": 30,
+   "group": "1a",
+   "kind": "Wykład",
+   "limit": 30,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | Ćwiczenia projektowe 1": {
+   "enrolled": 15,
+   "group": "1",
+   "kind": "Ćwiczenia projektowe",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Machine learning - advanced | Ćwiczenia projektowe 2": {
+   "enrolled": 15,
+   "group": "2",
+   "kind": "Ćwiczenia projektowe",
+   "limit": 15,
+   "title": "Machine learning - advanced"
+  },
+  "Smart dom | CWL 1": {
+   "enrolled": 12,
+   "group": "1",
+   "kind": "CWL",
+   "limit": 12,
+   "title": "Smart dom"
+  },
+  "Smart dom | Wykład 1": {
+   "enrolled": 12,
+   "group": "1",
+   "kind": "Wykład",
+   "limit": 12,
+   "title": "Smart dom"
+  },
+  "Smart dom | Wykład 1a": {
+   "enrolled": 12,
+   "group": "1a",
+   "kind": "Wykład",
+   "limit": 12,
+   "title": "Smart dom"
+  },
+  "Smart dom | Ćwiczenia projektowe 1": {
+   "enrolled": 12,
+   "group": "1",
+   "kind": "Ćwiczenia projektowe",
+   "limit": 12,
+   "title": "Smart dom"
+  }
+ }
+}
