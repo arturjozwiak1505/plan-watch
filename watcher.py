@@ -339,9 +339,15 @@ def check(url, state_path, ics_file=None, filter_text=None):
         needles = [f.strip().lower() for f in filter_text.split(",") if f.strip()]
         new = {k: v for k, v in new.items() if any(n in k.lower() for n in needles)}
 
+    filter_key = ",".join(sorted(n.strip().lower() for n in (filter_text or "").split(",") if n.strip()))
     saved = load_state(state_path)
+    if saved is not None and saved.get("filter", "") != filter_key:
+        # zmiana listy śledzonych przedmiotów to nie zmiana planu – zaczynamy od nowa
+        save_state(state_path, {"calname": calname, "groups": new, "filter": filter_key})
+        notify(f"🔧 Zmieniono listę śledzonych przedmiotów – teraz {len(new)} grup zajęciowych.")
+        return False
     if saved is None:
-        save_state(state_path, {"calname": calname, "groups": new})
+        save_state(state_path, {"calname": calname, "groups": new, "filter": filter_key})
         total = sum(len(v) for v in new.values())
         notify(f"✅ Zaczynam śledzić: {calname or url}\n{len(new)} grup zajęciowych, {total} terminów.")
         return False
@@ -349,7 +355,7 @@ def check(url, state_path, ics_file=None, filter_text=None):
     sections = diff_states(saved.get("groups", {}), new)
     if sections:
         notify(render(calname, sections))
-        save_state(state_path, {"calname": calname, "groups": new})
+        save_state(state_path, {"calname": calname, "groups": new, "filter": filter_key})
         return True
 
     print(f"[{datetime.now():%Y-%m-%d %H:%M}] bez zmian ({len(new)} grup)", flush=True)
