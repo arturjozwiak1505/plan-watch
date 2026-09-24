@@ -32,7 +32,7 @@ DEFAULT_URL = "https://plan.agh.edu.pl/UniTime/export?x=-3ov5g1vumac78p8z5qslfnd
 USER_AGENT = "agh-plan-watch/1.0 (prywatne powiadomienia o zmianach w planie)"
 WEEKDAYS = {"MO": 0, "TU": 1, "WE": 2, "TH": 3, "FR": 4, "SA": 5, "SU": 6}
 DAY_NAMES = ["pn", "wt", "śr", "cz", "pt", "sb", "nd"]
-MIN_INTERVAL_MIN = 5  # nie odpytujemy serwera uczelni częściej
+MIN_INTERVAL_MIN = 2  # nie odpytujemy serwera uczelni częściej
 
 
 # ---------------------------------------------------------------- pobieranie
