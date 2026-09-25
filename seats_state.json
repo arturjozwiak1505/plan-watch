@@ -11,28 +11,28 @@
    "enrolled": 12,
    "group": "2",
    "kind": "CWL",
-   "limit": 12,
+   "limit": 13,
    "title": "AI Security"
   },
   "AI Security | Wykład 1": {
    "enrolled": 24,
    "group": "1",
    "kind": "Wykład",
-   "limit": 24,
+   "limit": 25,
    "title": "AI Security"
   },
   "AI Security | Ćwiczenia projektowe 1": {
    "enrolled": 24,
    "group": "1",
    "kind": "Ćwiczenia projektowe",
-   "limit": 24,
+   "limit": 25,
    "title": "AI Security"
   },
   "AI Security | Ćwiczenia projektowe 1a": {
    "enrolled": 24,
    "group": "1a",
    "kind": "Ćwiczenia projektowe",
-   "limit": 24,
+   "limit": 25,
    "title": "AI Security"
   },
   "Data science na przykładzie zagadnień w firmie Ericsson | CWL 1": {
