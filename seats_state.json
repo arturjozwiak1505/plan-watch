@@ -50,7 +50,7 @@
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | CWL 2": {
-   "enrolled": 12,
+   "enrolled": 13,
    "group": "2",
    "kind": "CWL",
    "limit": 13,
@@ -64,7 +64,7 @@
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | CWL 4": {
-   "enrolled": 12,
+   "enrolled": 11,
    "group": "4",
    "kind": "CWL",
    "limit": 13,
@@ -78,7 +78,7 @@
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | Zajęcia seminaryjne 1": {
-   "enrolled": 17,
+   "enrolled": 16,
    "group": "1",
    "kind": "Zajęcia seminaryjne",
    "limit": 17,
@@ -92,7 +92,7 @@
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | Zajęcia seminaryjne 3": {
-   "enrolled": 16,
+   "enrolled": 17,
    "group": "3",
    "kind": "Zajęcia seminaryjne",
    "limit": 17,
@@ -148,14 +148,14 @@
    "title": "FiIS_IIst_Specjalistyczny język angielski B2+"
   },
   "FiIS_IIst_Specjalistyczny język angielski B2+ | Lektorat PIS-SF5_833": {
-   "enrolled": 17,
+   "enrolled": 18,
    "group": "PIS-SF5_833",
    "kind": "Lektorat",
    "limit": 19,
    "title": "FiIS_IIst_Specjalistyczny język angielski B2+"
   },
   "FiIS_IIst_Specjalistyczny język angielski B2+ | Lektorat PIS-SF6_834": {
-   "enrolled": 19,
+   "enrolled": 18,
    "group": "PIS-SF6_834",
    "kind": "Lektorat",
    "limit": 19,
