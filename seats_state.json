@@ -60,14 +60,14 @@
    "enrolled": 12,
    "group": "3",
    "kind": "CWL",
-   "limit": 12,
+   "limit": 13,
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | CWL 4": {
    "enrolled": 12,
    "group": "4",
    "kind": "CWL",
-   "limit": 12,
+   "limit": 13,
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | Wykład 1": {
@@ -95,7 +95,7 @@
    "enrolled": 16,
    "group": "3",
    "kind": "Zajęcia seminaryjne",
-   "limit": 16,
+   "limit": 17,
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | Ćwiczenia projektowe 1": {
