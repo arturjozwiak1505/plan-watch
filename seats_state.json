@@ -57,7 +57,7 @@
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | CWL 3": {
-   "enrolled": 9,
+   "enrolled": 8,
    "group": "3",
    "kind": "CWL",
    "limit": 13,
@@ -71,14 +71,14 @@
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | Wykład 1": {
-   "enrolled": 48,
+   "enrolled": 47,
    "group": "1",
    "kind": "Wykład",
    "limit": 49,
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | Zajęcia seminaryjne 1": {
-   "enrolled": 17,
+   "enrolled": 16,
    "group": "1",
    "kind": "Zajęcia seminaryjne",
    "limit": 17,
@@ -127,14 +127,14 @@
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | Ćwiczenia projektowe 3": {
-   "enrolled": 16,
+   "enrolled": 15,
    "group": "3",
    "kind": "Ćwiczenia projektowe",
    "limit": 16,
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | Ćwiczenia projektowe 3a": {
-   "enrolled": 16,
+   "enrolled": 15,
    "group": "3a",
    "kind": "Ćwiczenia projektowe",
    "limit": 16,
