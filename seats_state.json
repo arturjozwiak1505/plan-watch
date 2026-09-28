@@ -71,7 +71,7 @@
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | Wykład 1": {
-   "enrolled": 47,
+   "enrolled": 46,
    "group": "1",
    "kind": "Wykład",
    "limit": 49,
@@ -85,7 +85,7 @@
    "title": "Eksploracja danych (2rok)"
   },
   "Eksploracja danych (2rok) | Zajęcia seminaryjne 2": {
-   "enrolled": 13,
+   "enrolled": 12,
    "group": "2",
    "kind": "Zajęcia seminaryjne",
    "limit": 17,
@@ -155,7 +155,7 @@
    "title": "FiIS_IIst_Specjalistyczny język angielski B2+"
   },
   "FiIS_IIst_Specjalistyczny język angielski B2+ | Lektorat PIS-SF6_834": {
-   "enrolled": 16,
+   "enrolled": 15,
    "group": "PIS-SF6_834",
    "kind": "Lektorat",
    "limit": 19,
@@ -260,14 +260,14 @@
    "title": "Machine learning - advanced"
   },
   "Machine learning - advanced | Wykład 1": {
-   "enrolled": 30,
+   "enrolled": 29,
    "group": "1",
    "kind": "Wykład",
    "limit": 30,
    "title": "Machine learning - advanced"
   },
   "Machine learning - advanced | Wykład 1a": {
-   "enrolled": 30,
+   "enrolled": 29,
    "group": "1a",
    "kind": "Wykład",
    "limit": 30,
